@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Assignment 5</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="slds/salesforce-lightning-design-system.sanitized.css">
+	<link rel="stylesheet" type="text/css" href="./style.css">
+	<script type="text/javascript" src="JS/myScript.js"></script>
+</head>
+<body>
+	<header class="slds-grid slds-p-horizontal_x-large slds-p-vertical_large slds-grid_vertical-align-center slds-card">
+        
+		<div>
+			<img src="Images/rows_60.png" class="slds-icon_small slds-hide_medium" onclick="toogleNavBar()">
+		</div>
+		<div class="slds-col slds-m-left_medium">Logo</div>
+		
+    	<ul class="slds-col_bump-right slds-list_horizontal">
+    		<li class="slds-m-right_medium slds-show_medium nav-bar_text">Dashboard</li>
+    		<li class="slds-m-right_medium"><img src="Images/notification_60.png" class="slds-icon_small" onclick=""></li>
+    		<li class="slds-m-right_medium"><img src="Images/user_60.png" class="slds-icon_small" onclick=""></li>
+    		<li class="slds-m-right_medium slds-show_medium nav-bar_text">Stina Gunnarsdottir</li>
+    		<li class="slds-m-right_medium slds-show_medium"><img src="Images/chevrondown_60.png" class="slds-icon_x-small" onclick=""></li>
+    	</ul>
+
+	</header>
+
+	
+    <main class="slds-grid">
+    
+    <div class="side-bar slds-show_medium slds-col slds-size_2-of-12" id="side-bar" style="">
+  		<nav class="slds-nav-vertical" aria-label="Sub page">
+    		<div class="slds-nav-vertical__section">
+      			<h2 id="entity-header" class="slds-nav-vertical__title side-bar-heading_text">SUMMARY</h2>
+      			<ul aria-describedby="entity-header">
+        			<li class="slds-nav-vertical__item ">
+          				<a href="javascript:void(0);" class="slds-nav-vertical__action side-bar-text">Account Summary</a>
+        			</li>
+      			</ul>
+    		</div>
+   			 <div class="slds-nav-vertical__section">
+      			<h2 id="folder-header" class="slds-nav-vertical__title side-bar-heading_text">INVESTMENTS</h2>
+     			<ul aria-describedby="folder-header">
+        			<li class="slds-nav-vertical__item">
+         				<a href="javascript:void(0);" class="slds-nav-vertical__action side-bar-text">My Investments</a>
+        			</li>
+        			<li class="slds-nav-vertical__item slds-is-active">
+          				<a href="javascript:void(0);" class="slds-nav-vertical__action side-bar-text" aria-current="true">Investor List</a>
+       	 			</li>
+      			</ul>
+    		</div>
+    		<div class="slds-nav-vertical__section">
+      			<h2 id="folder-header" class="slds-nav-vertical__title side-bar-heading_text">DOCUMENTS</h2>
+     			<ul aria-describedby="folder-header">
+        			<li class="slds-nav-vertical__item">
+         				<a href="javascript:void(0);" class="slds-nav-vertical__action side-bar-text">My Document</a>
+        			</li>
+        			<li class="slds-nav-vertical__item">
+          				<a href="javascript:void(0);" class="slds-nav-vertical__action side-bar-text">Delegate Document</a>
+       	 			</li>
+      			</ul>
+    		</div>
+
+    		<div class="slds-nav-vertical__section">
+      			<h2 id="folder-header" class="slds-nav-vertical__title side-bar-heading_text">TRANSACTIONS</h2>
+     			<ul aria-describedby="folder-header">
+        			<li class="slds-nav-vertical__item">
+         				<a href="javascript:void(0);" class="slds-nav-vertical__action side-bar-text">My Transactions</a>
+        			</li>
+      			</ul>
+    		</div>
+
+    		<div class="slds-nav-vertical__section">
+      			<h2 id="folder-header" class="slds-nav-vertical__title side-bar-heading_text">DELEGATE</h2>
+     			<ul aria-describedby="folder-header">
+        			<li class="slds-nav-vertical__item">
+         				<a href="javascript:void(0);" class="slds-nav-vertical__action side-bar-text">My Delegate</a>
+        			</li>
+      			</ul>
+    		</div>
+
+
+  		</nav>
+	</div>
+   
+
+
+    <div class="slds-grid slds-grid_vertical slds-col slds-size_9-of-12 slds-m-horizontal_large slds-m-top_medium align-center" >
+
+    	<div class="slds-col slds-grid slds-grid_vertical-align-center slds-show_medium slds-grid_align-spread">
+    		<div class="heading-text slds-col_bump-right">Investor List</div>
+
+    		<div class="slds-form-element">
+  				<div class="slds-form-element__control slds-input-has-icon slds-input-has-icon_right">
+  					<img src="Images/search_60.png" class="slds-icon slds-input__icon slds-input__icon_right slds-icon-text-default">
+    				<input type="text" id="text-input-id-1" placeholder="Search by Name or Email" class="slds-input" />
+  				</div>
+			</div>
+ 
+			<div class="slds-grid slds-box slds-box_xx-small">
+				<div onclick="">
+					<img src="Images/tile_card_list_60.png" class="slds-icon_small" onclick="">
+				</div >
+				<div  onclick="">
+					<img src="Images/rows_60.png" class="slds-icon_small">
+				</div>
+			</div>
+
+			<div class="slds-box slds-box_xx-small">
+				<div>
+					<img src="Images/download_60.png" class="slds-icon_small" onclick="">
+				</div>
+			</div>
+
+    	</div>
+
+    	<div class=" slds-col slds-m-top_large" id="main-content">
+		
+		 <!-- first card -->
+		<article class="slds-card slds-card_width">
+  			<div class="slds-card__body slds-card__body_inner card-flex-box">
+  				<div class="flex-box_self-end slds-hide_medium">
+    				...
+     			</div>
+  				<div class="card-flex-box">
+					<img src="https://source.unsplash.com/400x400/?headshot" class="slds-size_xx-small slds-avatar_circle">	
+					<div class="slds-m-top_small slds-text-align_center">
+						<p class="text-color_black text-size_large slds-m-left_small">Ivan Magalhães<br/>
+						<span class="text-color_gray text-size_small slds-hide_medium">abcdef@xyz.com</span></p>
+					</div>
+				</div>
+
+				
+
+				<div class="slds-m-top_small">
+					<p class="text-color_gray text-size_small slds-text-align_center"><span class="slds-hide_medium">Total Contributions<br/></span>
+					<span class="text-color_black text-size_large">$ 821,243</span></p>
+				</div>
+
+				<div class="slds-m-top_small slds-show_medium">
+					<span class="text-color_black text-size_large">$ 821,243</span>
+				</div>
+
+				<div class="slds-m-top_small slds-show_medium">
+					<span class="text-color_black text-size_large">$ 821,243</span>
+				</div>
+
+				<div class="slds-m-top_small slds-show_medium">
+					<span class="text-color_blue text-size_large">View</span>
+				</div>
+
+				<span class="slds-show_medium">...</span>
+
+  			</div>
+
+  			<footer class="slds-card__footer slds-hide_medium">
+    				<a class="slds-card__footer-action text-color_blue text-size_small" href="javascript:void(0);">View Details</a>
+ 			</footer>
+
+  			
+		</article>
+
+        <!-- second card -->
+		<article class="slds-card slds-card_width">
+  			<div class="slds-card__body slds-card__body_inner card-flex-box">
+  				<div class="flex-box_self-end slds-hide_medium">
+    				...
+     			</div>
+  				<div class="card-flex-box">
+					<img src="https://source.unsplash.com/400x400/?headshot" class="slds-size_xx-small slds-avatar_circle">	
+					<div class="slds-m-top_small">
+						<p class="text-color_black text-size_large slds-m-left_small slds-text-align_center">Ivan Magalhães<br/>
+						<span class="text-color_gray text-size_small slds-hide_medium">abcdef@xyz.com</span></p>
+					</div>
+				</div>
+
+				
+
+				<div class="slds-m-top_small">
+					<p class="text-color_gray text-size_small slds-text-align_center"><span class="slds-hide_medium ">Total Contributions<br/></span>
+					<span class="text-color_black text-size_large">$ 821,243</span></p>
+				</div>
+
+				<div class="slds-m-top_small slds-show_medium">
+					<span class="text-color_black text-size_large">$ 821,243</span>
+				</div>
+
+				<div class="slds-m-top_small slds-show_medium">
+					<span class="text-color_black text-size_large">$ 821,243</span>
+				</div>
+
+				<div class="slds-m-top_small slds-show_medium">
+					<span class="text-color_blue text-size_large">View</span>
+				</div>
+
+				<span class="slds-show_medium">...</span>
+
+  			</div>
+
+  			<footer class="slds-card__footer slds-hide_medium">
+    				<a class="slds-card__footer-action text-color_blue text-size_small" href="javascript:void(0);">View Details</a>
+ 			</footer>
+
+  			
+		</article>
+    	<!-- third card-->
+    	<article class="slds-card slds-card_width">
+  			<div class="slds-card__body slds-card__body_inner card-flex-box">
+  				<div class="flex-box_self-end slds-hide_medium">
+    				...
+     			</div>
+  				<div class="card-flex-box">
+					<img src="https://source.unsplash.com/400x400/?headshot" class="slds-size_xx-small slds-avatar_circle">	
+					<div class="slds-m-top_small">
+						<p class="text-color_black text-size_large slds-m-left_small slds-text-align_center">Ivan Magalhães<br/>
+						<span class="text-color_gray text-size_small slds-hide_medium">abcdef@xyz.com</span></p>
+					</div>
+				</div>
+
+				
+
+				<div class="slds-m-top_small">
+					<p class="text-color_gray text-size_small slds-text-align_center"><span class="slds-hide_medium ">Total Contributions<br/></span>
+					<span class="text-color_black text-size_large">$ 821,243</span></p>
+				</div>
+
+				<div class="slds-m-top_small slds-show_medium">
+					<span class="text-color_black text-size_large">$ 821,243</span>
+				</div>
+
+				<div class="slds-m-top_small slds-show_medium">
+					<span class="text-color_black text-size_large">$ 821,243</span>
+				</div>
+
+				<div class="slds-m-top_small slds-show_medium">
+					<span class="text-color_blue text-size_large">View</span>
+				</div>
+
+				<span class="slds-show_medium">...</span>
+
+  			</div>
+
+  			<footer class="slds-card__footer slds-hide_medium">
+    				<a class="slds-card__footer-action text-color_blue text-size_small" href="javascript:void(0);">View Details</a>
+ 			</footer>
+
+  			
+		</article>
+
+		<!-- 4th card-->
+    	<article class="slds-card slds-card_width">
+  			<div class="slds-card__body slds-card__body_inner card-flex-box">
+  				<div class="flex-box_self-end slds-hide_medium">
+    				...
+     			</div>
+  				<div class="card-flex-box">
+					<img src="https://source.unsplash.com/400x400/?headshot" class="slds-size_xx-small slds-avatar_circle">	
+					<div class="slds-m-top_small">
+						<p class="text-color_black text-size_large slds-m-left_small slds-text-align_center">Ivan Magalhães<br/>
+						<span class="text-color_gray text-size_small slds-hide_medium">abcdef@xyz.com</span></p>
+					</div>
+				</div>
+
+				
+
+				<div class="slds-m-top_small">
+					<p class="text-color_gray text-size_small slds-text-align_center"><span class="slds-hide_medium">Total Contributions<br/></span>
+					<span class="text-color_black text-size_large">$ 821,243</span></p>
+				</div>
+
+				<div class="slds-m-top_small slds-show_medium">
+					<span class="text-color_black text-size_large">$ 821,243</span>
+				</div>
+
+				<div class="slds-m-top_small slds-show_medium">
+					<span class="text-color_black text-size_large">$ 821,243</span>
+				</div>
+
+				<div class="slds-m-top_small slds-show_medium">
+					<span class="text-color_blue text-size_large">View</span>
+				</div>
+
+				<span class="slds-show_medium">...</span>
+
+  			</div>
+
+  			<footer class="slds-card__footer slds-hide_medium">
+    				<a class="slds-card__footer-action text-color_blue text-size_small" href="javascript:void(0);">View Details</a>
+ 			</footer>
+
+  			
+		</article>
+
+		<!-- 5th card-->
+    	<article class="slds-card slds-card_width">
+  			<div class="slds-card__body slds-card__body_inner card-flex-box">
+  				<div class="flex-box_self-end slds-hide_medium">
+    				...
+     			</div>
+  				<div class="card-flex-box">
+					<img src="https://source.unsplash.com/400x400/?headshot" class="slds-size_xx-small slds-avatar_circle">	
+					<div class="slds-m-top_small">
+						<p class="text-color_black text-size_large slds-m-left_small slds-text-align_center">Ivan Magalhães<br/>
+						<span class="text-color_gray text-size_small slds-hide_medium">abcdef@xyz.com</span></p>
+					</div>
+				</div>
+
+				
+
+				<div class="slds-m-top_small">
+					<p class="text-color_gray text-size_small slds-text-align_center"><span class="slds-hide_medium">Total Contributions<br/></span>
+					<span class="text-color_black text-size_large">$ 821,243</span></p>
+				</div>
+
+				<div class="slds-m-top_small slds-show_medium">
+					<span class="text-color_black text-size_large">$ 821,243</span>
+				</div>
+
+				<div class="slds-m-top_small slds-show_medium">
+					<span class="text-color_black text-size_large">$ 821,243</span>
+				</div>
+
+				<div class="slds-m-top_small slds-show_medium">
+					<span class="text-color_blue text-size_large">View</span>
+				</div>
+
+				<span class="slds-show_medium">...</span>
+
+  			</div>
+
+  			<footer class="slds-card__footer slds-hide_medium">
+    				<a class="slds-card__footer-action text-color_blue text-size_small" href="javascript:void(0);">View Details</a>
+ 			</footer>
+
+  			
+		</article>
+
+		<!-- 6th card-->
+    	<article class="slds-card slds-card_width">
+  			<div class="slds-card__body slds-card__body_inner card-flex-box">
+  				<div class="flex-box_self-end slds-hide_medium">
+    				...
+     			</div>
+  				<div class="card-flex-box">
+					<img src="https://source.unsplash.com/400x400/?headshot" class="slds-size_xx-small slds-avatar_circle">	
+					<div class="slds-m-top_small">
+						<p class="text-color_black text-size_large slds-m-left_small slds-text-align_center">Ivan Magalhães<br/>
+						<span class="text-color_gray text-size_small slds-hide_medium">abcdef@xyz.com</span></p>
+					</div>
+				</div>
+
+				
+
+				<div class="slds-m-top_small"> 
+					<p class="text-color_gray text-size_small slds-text-align_center"><span class="slds-hide_medium">Total Contributions<br/></span>
+					<span class="text-color_black text-size_large">$ 821,243</span></p>
+				</div>
+
+				<div class="slds-m-top_small slds-show_medium">
+					<span class="text-color_black text-size_large">$ 821,243</span>
+				</div>
+
+				<div class="slds-m-top_small slds-show_medium">
+					<span class="text-color_black text-size_large">$ 821,243</span>
+				</div>
+
+				<div class="slds-m-top_small slds-show_medium">
+					<span class="text-color_blue text-size_large">View</span>
+				</div>
+
+				<span class="slds-show_medium">...</span>
+
+  			</div>
+
+  			<footer class="slds-card__footer slds-hide_medium">
+    				<a class="slds-card__footer-action text-color_blue text-size_small" href="javascript:void(0);">View Details</a>
+ 			</footer>
+
+  			
+		</article>
+
+		<!-- 7th card-->
+    	<article class="slds-card slds-card_width">
+  			<div class="slds-card__body slds-card__body_inner card-flex-box">
+  				<div class="flex-box_self-end slds-hide_medium">
+    				...
+     			</div>
+  				<div class="card-flex-box">
+					<img src="https://source.unsplash.com/400x400/?headshot" class="slds-size_xx-small slds-avatar_circle">	
+					<div class="slds-m-top_small">
+						<p class="text-color_black text-size_large slds-m-left_small slds-text-align_center">Ivan Magalhães<br/>
+						<span class="text-color_gray text-size_small slds-hide_medium">abcdef@xyz.com</span></p>
+					</div>
+				</div>
+
+				
+
+				<div class="slds-m-top_small">
+					<p class="text-color_gray text-size_small slds-text-align_center"><span class="slds-hide_medium">Total Contributions<br/></span>
+					<span class="text-color_black text-size_large">$ 821,243</span></p>
+				</div>
+
+				<div class="slds-m-top_small slds-show_medium">
+					<span class="text-color_black text-size_large">$ 821,243</span>
+				</div>
+
+				<div class="slds-m-top_small slds-show_medium">
+					<span class="text-color_black text-size_large">$ 821,243</span>
+				</div>
+
+				<div class="slds-m-top_small slds-show_medium">
+					<span class="text-color_blue text-size_large">View</span>
+				</div>
+
+				<span class="slds-show_medium">...</span>
+
+  			</div>
+
+  			<footer class="slds-card__footer slds-hide_medium">
+    				<a class="slds-card__footer-action text-color_blue text-size_small" href="javascript:void(0);">View Details</a>
+ 			</footer>
+
+  			
+		</article>
+
+		<!-- 8th card-->
+    	
+
+
+
+
+
+
+	</div>
+
+	
+	</div>
+   </main>	
+ 
+		
+</body>
+
+</html>
+
+
+
+
+			
