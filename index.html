@@ -4,7 +4,7 @@
 	<title>Assignment 5</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" type="text/css" href="slds/salesforce-lightning-design-system.sanitized.css">
-	<link rel="stylesheet" type="text/css" href="./Style.css">
+	<link rel="stylesheet" type="text/css" href="Style.css">
 	<script type="text/javascript" src="JS/myScript.js"></script>
 </head>
 <body>
@@ -28,7 +28,7 @@
 	
     <main class="slds-grid">
     
-    <div class="side-bar slds-show_medium slds-col slds-size_2-of-12" id="side-bar" style="">
+    <div class="side-bar slds-show_medium slds-col slds-size_10-of-12 slds-medium-size_2-of-12" id="side-bar">
   		<nav class="slds-nav-vertical" aria-label="Sub page">
     		<div class="slds-nav-vertical__section">
       			<h2 id="entity-header" class="slds-nav-vertical__title side-bar-heading_text">SUMMARY</h2>
@@ -90,19 +90,19 @@
     	<div class="slds-col slds-grid slds-grid_vertical-align-center slds-show_medium slds-grid_align-spread">
     		<div class="heading-text slds-col_bump-right">Investor List</div>
 
-    		<div class="slds-form-element slds-m-right_small">
+    		<div class="slds-form-element slds-m-right_medium">
   				<div class="slds-form-element__control slds-input-has-icon slds-input-has-icon_right">
   					<img src="Images/search_60.png" class="slds-icon slds-input__icon slds-input__icon_right slds-icon-text-default">
     				<input type="text" id="text-input-id-1" placeholder="Search by Name or Email" class="slds-input" />
   				</div>
 			</div>
  
-			<div class="slds-grid slds-box slds-box_xx-small slds-m-right_small">
-				<div onclick="">
-					<img src="Images/tile_card_list_60.png" class="slds-icon_small" onclick="">
+			<div class="slds-grid slds-box slds-box_xx-small slds-m-right_medium" >
+				<div onclick="handleClick_card(event)">
+					<img src="Images/tile_card_list_60.png" class="slds-icon_small" id="card_view">
 				</div >
-				<div  onclick="">
-					<img src="Images/rows_60.png" class="slds-icon_small">
+				<div  onclick="handleClick_table(event)">
+					<img src="Images/rows_60.png" class="slds-icon_small" id="table_view">
 				</div>
 			</div>
 
@@ -114,46 +114,47 @@
 
     	</div>
 
-    	<div class=" slds-col slds-m-top_large" id="main-content">
+    	<div class=" slds-grid slds-wrap slds-gutters_direct slds-col slds-m-top_large" id="main-content">
+
 		
 		 <!-- first card -->
-		<article class="slds-card slds-card_width">
+		<article class="slds-card card slds-col slds-size_1-of-1 slds-m-top_medium table-spacing">
   			<div class="slds-card__body slds-card__body_inner card-flex-box">
-  				<div class="flex-box_self-end slds-hide_medium">
+  				<div class="flex-box_self-end slds-hide_medium show-in-card text_bolder">
     				...
      			</div>
   				<div class="card-flex-box">
-					<img src="https://source.unsplash.com/400x400/?headshot" class="slds-size_xx-small slds-avatar_circle">	
-					<div class="slds-m-top_small slds-text-align_center">
-						<p class="text-color_black text-size_large slds-m-left_small">Ivan Magalhães<br/>
-						<span class="text-color_gray text-size_small slds-hide_medium">abcdef@xyz.com</span></p>
+					<img src="https://source.unsplash.com/400x400/?headshot" class="headshot-size slds-avatar_circle headshot">	
+					<div class="slds-m-top_small">
+						<p class="text-color_black text-size_large slds-m-left_small slds-text-align_center">Ivan Magalhães<br/>
+						<span class="text-color_gray text-size_small slds-hide_medium show-in-card">abcdef@xyz.com</span></p>
 					</div>
 				</div>
 
 				
 
 				<div class="slds-m-top_small">
-					<p class="text-color_gray text-size_small slds-text-align_center"><span class="slds-hide_medium">Total Contributions<br/></span>
+					<p class="text-color_gray text-size_small slds-text-align_center"><span class="slds-hide_medium show-in-card">Total Contributions<br/></span>
 					<span class="text-color_black text-size_large">$ 821,243</span></p>
 				</div>
 
-				<div class="slds-m-top_small slds-show_medium">
+				<div class="slds-m-top_small slds-show_medium show-in-table">
 					<span class="text-color_black text-size_large">$ 821,243</span>
 				</div>
 
-				<div class="slds-m-top_small slds-show_medium">
+				<div class="slds-m-top_small slds-show_medium show-in-table">
 					<span class="text-color_black text-size_large">$ 821,243</span>
 				</div>
 
-				<div class="slds-m-top_small slds-show_medium">
+				<div class="slds-m-top_small slds-show_medium show-in-table">
 					<span class="text-color_blue text-size_large">View</span>
 				</div>
 
-				<span class="slds-show_medium">...</span>
+				<span class="slds-show_medium show-in-table text_bolder">...</span>
 
   			</div>
 
-  			<footer class="slds-card__footer slds-hide_medium">
+  			<footer class="slds-card__footer slds-hide_medium show-in-card">
     				<a class="slds-card__footer-action text-color_blue text-size_small" href="javascript:void(0);">View Details</a>
  			</footer>
 
@@ -161,86 +162,86 @@
 		</article>
 
         <!-- second card -->
-		<article class="slds-card slds-card_width">
+		<article class="slds-card card slds-col slds-size_1-of-1 table-spacing">
   			<div class="slds-card__body slds-card__body_inner card-flex-box">
-  				<div class="flex-box_self-end slds-hide_medium">
+  				<div class="flex-box_self-end slds-hide_medium show-in-card text_bolder">
     				...
      			</div>
   				<div class="card-flex-box">
-					<img src="https://source.unsplash.com/400x400/?headshot" class="slds-size_xx-small slds-avatar_circle">	
+					<img src="https://source.unsplash.com/400x400/?headshot" class="headshot-size slds-avatar_circle  headshot">	
 					<div class="slds-m-top_small">
 						<p class="text-color_black text-size_large slds-m-left_small slds-text-align_center">Ivan Magalhães<br/>
-						<span class="text-color_gray text-size_small slds-hide_medium">abcdef@xyz.com</span></p>
+						<span class="text-color_gray text-size_small slds-hide_medium show-in-card">abcdef@xyz.com</span></p>
 					</div>
 				</div>
 
 				
 
 				<div class="slds-m-top_small">
-					<p class="text-color_gray text-size_small slds-text-align_center"><span class="slds-hide_medium ">Total Contributions<br/></span>
+					<p class="text-color_gray text-size_small slds-text-align_center"><span class="slds-hide_medium show-in-card">Total Contributions<br/></span>
 					<span class="text-color_black text-size_large">$ 821,243</span></p>
 				</div>
 
-				<div class="slds-m-top_small slds-show_medium">
+				<div class="slds-m-top_small slds-show_medium show-in-table">
 					<span class="text-color_black text-size_large">$ 821,243</span>
 				</div>
 
-				<div class="slds-m-top_small slds-show_medium">
+				<div class="slds-m-top_small slds-show_medium show-in-table">
 					<span class="text-color_black text-size_large">$ 821,243</span>
 				</div>
 
-				<div class="slds-m-top_small slds-show_medium">
+				<div class="slds-m-top_small slds-show_medium show-in-table">
 					<span class="text-color_blue text-size_large">View</span>
 				</div>
 
-				<span class="slds-show_medium">...</span>
+				<span class="slds-show_medium show-in-table text_bolder">...</span>
 
   			</div>
 
-  			<footer class="slds-card__footer slds-hide_medium">
+  			<footer class="slds-card__footer slds-hide_medium show-in-card">
     				<a class="slds-card__footer-action text-color_blue text-size_small" href="javascript:void(0);">View Details</a>
  			</footer>
 
   			
 		</article>
     	<!-- third card-->
-    	<article class="slds-card slds-card_width">
+    	<article class="slds-card card slds-col slds-size_1-of-1 table-spacing">
   			<div class="slds-card__body slds-card__body_inner card-flex-box">
-  				<div class="flex-box_self-end slds-hide_medium">
+  				<div class="flex-box_self-end slds-hide_medium show-in-card text_bolder">
     				...
      			</div>
   				<div class="card-flex-box">
-					<img src="https://source.unsplash.com/400x400/?headshot" class="slds-size_xx-small slds-avatar_circle">	
+					<img src="https://source.unsplash.com/400x400/?headshot" class="headshot-size slds-avatar_circle  headshot">	
 					<div class="slds-m-top_small">
 						<p class="text-color_black text-size_large slds-m-left_small slds-text-align_center">Ivan Magalhães<br/>
-						<span class="text-color_gray text-size_small slds-hide_medium">abcdef@xyz.com</span></p>
+						<span class="text-color_gray text-size_small slds-hide_medium show-in-card">abcdef@xyz.com</span></p>
 					</div>
 				</div>
 
 				
 
 				<div class="slds-m-top_small">
-					<p class="text-color_gray text-size_small slds-text-align_center"><span class="slds-hide_medium ">Total Contributions<br/></span>
+					<p class="text-color_gray text-size_small slds-text-align_center"><span class="slds-hide_medium show-in-card">Total Contributions<br/></span>
 					<span class="text-color_black text-size_large">$ 821,243</span></p>
 				</div>
 
-				<div class="slds-m-top_small slds-show_medium">
+				<div class="slds-m-top_small slds-show_medium show-in-table">
 					<span class="text-color_black text-size_large">$ 821,243</span>
 				</div>
 
-				<div class="slds-m-top_small slds-show_medium">
+				<div class="slds-m-top_small slds-show_medium show-in-table">
 					<span class="text-color_black text-size_large">$ 821,243</span>
 				</div>
 
-				<div class="slds-m-top_small slds-show_medium">
+				<div class="slds-m-top_small slds-show_medium show-in-table">
 					<span class="text-color_blue text-size_large">View</span>
 				</div>
 
-				<span class="slds-show_medium">...</span>
+				<span class="slds-show_medium show-in-table text_bolder">...</span>
 
   			</div>
 
-  			<footer class="slds-card__footer slds-hide_medium">
+  			<footer class="slds-card__footer slds-hide_medium show-in-card">
     				<a class="slds-card__footer-action text-color_blue text-size_small" href="javascript:void(0);">View Details</a>
  			</footer>
 
@@ -248,43 +249,43 @@
 		</article>
 
 		<!-- 4th card-->
-    	<article class="slds-card slds-card_width">
+    	<article class="slds-card card slds-col slds-size_1-of-1 table-spacing">
   			<div class="slds-card__body slds-card__body_inner card-flex-box">
-  				<div class="flex-box_self-end slds-hide_medium">
+  				<div class="flex-box_self-end slds-hide_medium show-in-card text_bolder">
     				...
      			</div>
   				<div class="card-flex-box">
-					<img src="https://source.unsplash.com/400x400/?headshot" class="slds-size_xx-small slds-avatar_circle">	
+					<img src="https://source.unsplash.com/400x400/?headshot" class="headshot-size slds-avatar_circle  headshot">	
 					<div class="slds-m-top_small">
 						<p class="text-color_black text-size_large slds-m-left_small slds-text-align_center">Ivan Magalhães<br/>
-						<span class="text-color_gray text-size_small slds-hide_medium">abcdef@xyz.com</span></p>
+						<span class="text-color_gray text-size_small slds-hide_medium show-in-card">abcdef@xyz.com</span></p>
 					</div>
 				</div>
 
 				
 
 				<div class="slds-m-top_small">
-					<p class="text-color_gray text-size_small slds-text-align_center"><span class="slds-hide_medium">Total Contributions<br/></span>
+					<p class="text-color_gray text-size_small slds-text-align_center"><span class="slds-hide_medium show-in-card">Total Contributions<br/></span>
 					<span class="text-color_black text-size_large">$ 821,243</span></p>
 				</div>
 
-				<div class="slds-m-top_small slds-show_medium">
+				<div class="slds-m-top_small slds-show_medium show-in-table">
 					<span class="text-color_black text-size_large">$ 821,243</span>
 				</div>
 
-				<div class="slds-m-top_small slds-show_medium">
+				<div class="slds-m-top_small slds-show_medium show-in-table">
 					<span class="text-color_black text-size_large">$ 821,243</span>
 				</div>
 
-				<div class="slds-m-top_small slds-show_medium">
+				<div class="slds-m-top_small slds-show_medium show-in-table">
 					<span class="text-color_blue text-size_large">View</span>
 				</div>
 
-				<span class="slds-show_medium">...</span>
+				<span class="slds-show_medium show-in-table text_bolder">...</span>
 
   			</div>
 
-  			<footer class="slds-card__footer slds-hide_medium">
+  			<footer class="slds-card__footer slds-hide_medium show-in-card">
     				<a class="slds-card__footer-action text-color_blue text-size_small" href="javascript:void(0);">View Details</a>
  			</footer>
 
@@ -292,43 +293,43 @@
 		</article>
 
 		<!-- 5th card-->
-    	<article class="slds-card slds-card_width">
+    	<article class="slds-card card slds-col slds-size_1-of-1 table-spacing">
   			<div class="slds-card__body slds-card__body_inner card-flex-box">
-  				<div class="flex-box_self-end slds-hide_medium">
+  				<div class="flex-box_self-end slds-hide_medium show-in-card text_bolder">
     				...
      			</div>
   				<div class="card-flex-box">
-					<img src="https://source.unsplash.com/400x400/?headshot" class="slds-size_xx-small slds-avatar_circle">	
+					<img src="https://source.unsplash.com/400x400/?headshot" class="headshot-size slds-avatar_circle  headshot">	
 					<div class="slds-m-top_small">
 						<p class="text-color_black text-size_large slds-m-left_small slds-text-align_center">Ivan Magalhães<br/>
-						<span class="text-color_gray text-size_small slds-hide_medium">abcdef@xyz.com</span></p>
+						<span class="text-color_gray text-size_small slds-hide_medium show-in-card">abcdef@xyz.com</span></p>
 					</div>
 				</div>
 
 				
 
 				<div class="slds-m-top_small">
-					<p class="text-color_gray text-size_small slds-text-align_center"><span class="slds-hide_medium">Total Contributions<br/></span>
+					<p class="text-color_gray text-size_small slds-text-align_center"><span class="slds-hide_medium show-in-card">Total Contributions<br/></span>
 					<span class="text-color_black text-size_large">$ 821,243</span></p>
 				</div>
 
-				<div class="slds-m-top_small slds-show_medium">
+				<div class="slds-m-top_small slds-show_medium show-in-table">
 					<span class="text-color_black text-size_large">$ 821,243</span>
 				</div>
 
-				<div class="slds-m-top_small slds-show_medium">
+				<div class="slds-m-top_small slds-show_medium show-in-table">
 					<span class="text-color_black text-size_large">$ 821,243</span>
 				</div>
 
-				<div class="slds-m-top_small slds-show_medium">
+				<div class="slds-m-top_small slds-show_medium show-in-table">
 					<span class="text-color_blue text-size_large">View</span>
 				</div>
 
-				<span class="slds-show_medium">...</span>
+				<span class="slds-show_medium show-in-table text_bolder">...</span>
 
   			</div>
 
-  			<footer class="slds-card__footer slds-hide_medium">
+  			<footer class="slds-card__footer slds-hide_medium show-in-card">
     				<a class="slds-card__footer-action text-color_blue text-size_small" href="javascript:void(0);">View Details</a>
  			</footer>
 
@@ -336,43 +337,43 @@
 		</article>
 
 		<!-- 6th card-->
-    	<article class="slds-card slds-card_width">
+    	<article class="slds-card card slds-col slds-size_1-of-1 table-spacing">
   			<div class="slds-card__body slds-card__body_inner card-flex-box">
-  				<div class="flex-box_self-end slds-hide_medium">
+  				<div class="flex-box_self-end slds-hide_medium show-in-card text_bolder">
     				...
      			</div>
   				<div class="card-flex-box">
-					<img src="https://source.unsplash.com/400x400/?headshot" class="slds-size_xx-small slds-avatar_circle">	
+					<img src="https://source.unsplash.com/400x400/?headshot" class="headshot-size slds-avatar_circle  headshot">	
 					<div class="slds-m-top_small">
 						<p class="text-color_black text-size_large slds-m-left_small slds-text-align_center">Ivan Magalhães<br/>
-						<span class="text-color_gray text-size_small slds-hide_medium">abcdef@xyz.com</span></p>
+						<span class="text-color_gray text-size_small slds-hide_medium show-in-card">abcdef@xyz.com</span></p>
 					</div>
 				</div>
 
 				
 
-				<div class="slds-m-top_small"> 
-					<p class="text-color_gray text-size_small slds-text-align_center"><span class="slds-hide_medium">Total Contributions<br/></span>
+				<div class="slds-m-top_small">
+					<p class="text-color_gray text-size_small slds-text-align_center"><span class="slds-hide_medium show-in-card">Total Contributions<br/></span>
 					<span class="text-color_black text-size_large">$ 821,243</span></p>
 				</div>
 
-				<div class="slds-m-top_small slds-show_medium">
+				<div class="slds-m-top_small slds-show_medium show-in-table">
 					<span class="text-color_black text-size_large">$ 821,243</span>
 				</div>
 
-				<div class="slds-m-top_small slds-show_medium">
+				<div class="slds-m-top_small slds-show_medium show-in-table">
 					<span class="text-color_black text-size_large">$ 821,243</span>
 				</div>
 
-				<div class="slds-m-top_small slds-show_medium">
+				<div class="slds-m-top_small slds-show_medium show-in-table">
 					<span class="text-color_blue text-size_large">View</span>
 				</div>
 
-				<span class="slds-show_medium">...</span>
+				<span class="slds-show_medium show-in-table text_bolder">...</span>
 
   			</div>
 
-  			<footer class="slds-card__footer slds-hide_medium">
+  			<footer class="slds-card__footer slds-hide_medium show-in-card">
     				<a class="slds-card__footer-action text-color_blue text-size_small" href="javascript:void(0);">View Details</a>
  			</footer>
 
@@ -380,43 +381,43 @@
 		</article>
 
 		<!-- 7th card-->
-    	<article class="slds-card slds-card_width">
+    	<article class="slds-card card slds-col slds-size_1-of-1 table-spacing">
   			<div class="slds-card__body slds-card__body_inner card-flex-box">
-  				<div class="flex-box_self-end slds-hide_medium">
+  				<div class="flex-box_self-end slds-hide_medium show-in-card text_bolder">
     				...
      			</div>
   				<div class="card-flex-box">
-					<img src="https://source.unsplash.com/400x400/?headshot" class="slds-size_xx-small slds-avatar_circle">	
+					<img src="https://source.unsplash.com/400x400/?headshot" class="headshot-size slds-avatar_circle  headshot">	
 					<div class="slds-m-top_small">
 						<p class="text-color_black text-size_large slds-m-left_small slds-text-align_center">Ivan Magalhães<br/>
-						<span class="text-color_gray text-size_small slds-hide_medium">abcdef@xyz.com</span></p>
+						<span class="text-color_gray text-size_small slds-hide_medium show-in-card">abcdef@xyz.com</span></p>
 					</div>
 				</div>
 
 				
 
 				<div class="slds-m-top_small">
-					<p class="text-color_gray text-size_small slds-text-align_center"><span class="slds-hide_medium">Total Contributions<br/></span>
+					<p class="text-color_gray text-size_small slds-text-align_center"><span class="slds-hide_medium show-in-card">Total Contributions<br/></span>
 					<span class="text-color_black text-size_large">$ 821,243</span></p>
 				</div>
 
-				<div class="slds-m-top_small slds-show_medium">
+				<div class="slds-m-top_small slds-show_medium show-in-table">
 					<span class="text-color_black text-size_large">$ 821,243</span>
 				</div>
 
-				<div class="slds-m-top_small slds-show_medium">
+				<div class="slds-m-top_small slds-show_medium show-in-table">
 					<span class="text-color_black text-size_large">$ 821,243</span>
 				</div>
 
-				<div class="slds-m-top_small slds-show_medium">
+				<div class="slds-m-top_small slds-show_medium show-in-table">
 					<span class="text-color_blue text-size_large">View</span>
 				</div>
 
-				<span class="slds-show_medium">...</span>
+				<span class="slds-show_medium show-in-table text_bolder">...</span>
 
   			</div>
 
-  			<footer class="slds-card__footer slds-hide_medium">
+  			<footer class="slds-card__footer slds-hide_medium show-in-card">
     				<a class="slds-card__footer-action text-color_blue text-size_small" href="javascript:void(0);">View Details</a>
  			</footer>
 
